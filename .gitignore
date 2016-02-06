@@ -1,2 +1,21 @@
-# Created by .ignore support plugin (hsz.mobi)
+# generelle regler
+.settings
+*~
+.cache
+rebel.xml
+.classpath
+.project
+.directory
 .idea
+.cache
+*.iml
+*.ipr
+*.iws
+nb-configuration.xml
+nbproject
+nbactions.xml
+.DS_Store
+.metadata
+.m2
+*.pyc
+**/target
