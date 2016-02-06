@@ -221,11 +221,10 @@
                         <contextPath>/extremestartup</contextPath>
                         <resourceBases>
                             <resourceBase>src/main/webapp</resourceBase>
-                            <resourceBase>frontend/build</resourceBase>
                         </resourceBases>
                     </webAppConfig>
                     <httpConnector>
-                        <port>5300</port>
+                        <port>9000</port>
                         <idleTimeout>60000</idleTimeout>
                     </httpConnector>
                     <useTestClasspath>true</useTestClasspath>
