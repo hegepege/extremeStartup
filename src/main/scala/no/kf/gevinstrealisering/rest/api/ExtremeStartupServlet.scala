@@ -14,6 +14,12 @@ class ExtremeStartupServlet extends ScalatraServlet with JsonSupportWithJsonErro
     //Serialization.write()
   }
 
+  get("/?") {
+    <body>
+      <h1>Hello World!!!</h1>
+    </body>
+    status = 200
+  }
 
   post("/post2/?") {
     val receivedIds = Serialization.read[List[String]](request.body)
