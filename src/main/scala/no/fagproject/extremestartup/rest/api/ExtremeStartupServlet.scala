@@ -15,10 +15,10 @@ class ExtremeStartupServlet extends ScalatraServlet with JsonSupportWithJsonErro
   }
 
   get("/?") {
+    contentType="text/html"
     <body>
       <h1>Hello World!!!</h1>
     </body>
-    status = 200
   }
 
   post("/post2/?") {
