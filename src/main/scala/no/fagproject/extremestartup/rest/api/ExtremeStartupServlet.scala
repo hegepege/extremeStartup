@@ -7,29 +7,31 @@ import org.scalatra.ScalatraServlet
 
 class ExtremeStartupServlet extends ScalatraServlet with JsonSupportWithJsonErrorHandling  with Logging {
 
-  post("post1/?") {
-    val title = extractRequiredParam("param1")
-    val externalId = extractRequiredParam("param2")
-    status = 200
-    //Serialization.write()
-  }
-
   get("/?") {
+    Console.println("get")
     contentType="text/html"
     <body>
       <h1>Hello World!!!</h1>
     </body>
   }
 
-  post("/post2/?") {
-    val receivedIds = Serialization.read[List[String]](request.body)
+  post("/?") {
+    //val receivedIds = Serialization.read[List[String]](request.body)
+    Console.println(request.body);
     contentType = "application/json"
     status = 200
-    //Serialization.write()
+    Serialization.write("{hello}")
   }
 
-  delete("/:id/?") {
-    status = 204
+  put("/"){
+    Console.println(request.body);
+    contentType = "application/json"
+    status = 200
+    Serialization.write("{hello}")
+  }
+
+  delete("/?") {
+    status = 200
   }
 
 }
