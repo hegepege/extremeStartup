@@ -8,11 +8,17 @@ import org.scalatra.ScalatraServlet
 class ExtremeStartupServlet extends ScalatraServlet with JsonSupportWithJsonErrorHandling  with Logging {
 
   get("/?") {
-    Console.println("get")
-    contentType="text/html"
-    <body>
-      <h1>Hello World!!!</h1>
-    </body>
+
+    print(request.header(request.getHeader("Accept-Encoding)")))
+    params.map(s => println(s))
+    val question = extractRequiredParam("q")
+    println(question)
+    contentType = "application/json"
+    val p = "\\w+: what is (\\d+) plus (\\d+)".r
+    question match {
+      case p(c1, c2) => Serialization.write((c1.toInt + c2.toInt).toString())
+      case _ => println("we suck")
+    }
   }
 
   post("/?") {
